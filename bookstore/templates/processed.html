@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PageLust - Payment</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f2f7f5;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .payment-box {
+      max-width: 500px;
+      margin: 60px auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    .payment-box h3 {
+      color: #18520a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .btn-order {
+      background: #18520a;
+      color: white;
+      border: none;
+    }
+    .btn-order:hover {
+      background: #146406;
+    }
+  </style>
+</head>
+<body>
+
+<div class="payment-box">
+  <h3>Confirm Your Order</h3>
+
+  <div class="mb-3">
+    <label class="form-label">Your Name</label>
+    <input type="text" class="form-control" id="name">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Address</label>
+    <textarea class="form-control" rows="2" id="address"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Phone Number</label>
+    <input type="text" class="form-control" id="phone">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Payment Method</label>
+    <select class="form-select" id="paymentMethod">
+      <option>Cash on Delivery</option>
+      <option>UPI</option>
+      <option>Card</option>
+    </select>
+  </div>
+
+  <hr>
+
+  <p><strong>Book Price:</strong> ₹499</p>
+  <p><strong>Delivery:</strong> ₹50</p>
+  <p><strong>Total:</strong> ₹549</p>
+
+  <div class="d-grid mt-4">
+    <button class="btn btn-order" onclick="placeOrder()">Place Order</button>
+  </div>
+</div>
+
+<script>
+  function placeOrder() {
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const phone = document.getElementById("phone").value;
+
+    if (!name || !address || !phone) {
+      alert("Please fill in all the details.");
+      return;
+    }
+
+    alert("🎉 Order placed successfully!\nThank you for shopping at PageLust.");
+    window.location.href = "index.html"; // Go back to home
+  }
+</script>
+
+</body>
+</html>
+
